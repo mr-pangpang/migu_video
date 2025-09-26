@@ -1,3 +1,5 @@
+import { getDateString } from "./time.js"
+
 const list = {
   // h5端修改频繁，现已失效
   "h5": {
@@ -205,7 +207,7 @@ function getddCalcu720p(puData, programId) {
     return ""
   }
 
-  const words = ["e","1","","0"]
+  const words = ["e", "2", "", "0"]
   const thirdReplaceIndex = 2
 
   puData = puData.split("");
@@ -223,7 +225,7 @@ function getddCalcu720p(puData, programId) {
         ddCalcu.push(words[i - 1])
         break;
       case 2:
-        ddCalcu.push(words[i - 1])
+        ddCalcu.push(keys[parseInt(getDateString(new Date())[6])])
         break;
       case 3:
         ddCalcu.push(keys[programId[thirdReplaceIndex]])
